@@ -1149,37 +1149,9 @@ footer {
     height: auto;
     object-fit: contain;
 
-    mix-blend-mode: screen !important;
-    background: transparent !important;
-}
-/* Final Profile Image Styling */
+    /* Blend black background with the dark website */
+    mix-blend-mode: screen;
 
-.profile-image {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(0, 220, 255, 0.2));
     transition: transform 0.4s ease;
-}
-/* Fix: remove black photo background */
-
-.profile-motion {
-    animation: none !important;
-    transform: none !important;
-    isolation: auto;
-}
-
-.profile-image {
-    mix-blend-mode: screen;
-    background: transparent;
-    animation: floatProfile 5s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .profile-image {
-        animation: none;
-    }
 }
