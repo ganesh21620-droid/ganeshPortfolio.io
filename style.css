@@ -1073,3 +1073,71 @@ footer {
     width: 100%;
     height: auto;
 }
+/* Profile visual layout */
+
+.hero .visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    overflow: visible;
+}
+
+/* Profile wrapper */
+
+.profile-motion {
+    position: relative;
+    width: 420px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatProfile 5s ease-in-out infinite;
+}
+
+/* Profile image */
+
+.profile-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Glow */
+
+.profile-glow {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 220, 255, 0.25),
+        transparent 70%
+    );
+    filter: blur(35px);
+    z-index: 1;
+}
+
+/* Floating animation */
+
+@keyframes floatProfile {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .profile-motion {
+        width: 300px;
+    }
+}
