@@ -913,3 +913,150 @@ footer {
     color: #0b1020;
     transform: translateY(-2px);
 }
+
+/* Modern Floating Profile Photo */
+
+.hero .visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.profile-motion {
+    position: relative;
+    width: 420px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatProfile 5s ease-in-out infinite;
+}
+
+/* Profile image */
+
+.profile-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0, 220, 255, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.profile-motion:hover .profile-image {
+    transform: scale(1.05);
+}
+
+/* Neon glow behind image */
+
+.profile-glow {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 220, 255, 0.25),
+        rgba(40, 80, 255, 0.12),
+        transparent 70%
+    );
+    filter: blur(35px);
+    z-index: 1;
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+
+@keyframes floatProfile {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+/* Glow animation */
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+/* Floating tech badges */
+
+.floating-chip {
+    position: absolute;
+    z-index: 3;
+    padding: 12px 18px;
+    background: rgba(20, 35, 60, 0.95);
+    border: 1px solid rgba(100, 220, 255, 0.3);
+    border-radius: 12px;
+    color: #eafaff;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+    backdrop-filter: blur(10px);
+    animation: chipFloat 4s ease-in-out infinite;
+}
+
+.chip-python {
+    top: 15%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.chip-sql {
+    bottom: 25%;
+    left: -5%;
+    animation-delay: 1s;
+}
+
+.chip-powerbi {
+    top: 55%;
+    right: -8%;
+    animation-delay: 2s;
+}
+
+@keyframes chipFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .profile-motion {
+        width: 300px;
+    }
+
+    .floating-chip {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+}
+
+/* Accessibility: reduce motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-motion,
+    .profile-glow,
+    .floating-chip {
+        animation: none;
+    }
+}
