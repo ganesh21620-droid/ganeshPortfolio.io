@@ -1149,9 +1149,6 @@ footer {
     height: auto;
     object-fit: contain;
 
-    /* Blend black background with the dark website */
-    mix-blend-mode: screen;
-
-    filter: drop-shadow(0 0 20px rgba(0, 220, 255, 0.2));
-    transition: transform 0.4s ease;
+    mix-blend-mode: screen !important;
+    background: transparent !important;
 }
