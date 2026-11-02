@@ -847,3 +847,27 @@ footer {
   .flow { gap: 5px; }
   .flow b { padding: 12px 8px; font-size: .6rem; }
 }
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.hero .actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .hero .actions {
+    gap: 10px;
+  }
+
+  .hero .actions .btn {
+    padding: 12px 16px;
+  }
+}
